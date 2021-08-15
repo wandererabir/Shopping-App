@@ -1,3 +1,6 @@
+# My Space - Shopping App
+Frontend - React.js, Material UI, React Hook Form
+Backend - Commerce.js, Stripe.js
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
