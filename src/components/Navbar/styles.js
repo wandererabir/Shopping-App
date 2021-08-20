@@ -20,6 +20,10 @@ export default makeStyles((theme) => ({
   image: {
     marginRight: '10px',
   },
+  Options: {
+    display:'flex',
+    flex: 10,
+  },
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
