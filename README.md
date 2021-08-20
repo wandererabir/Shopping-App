@@ -1,5 +1,5 @@
 # My Space - Shopping App
-Frontend - React.js, Material UI, React Hook Form
+Frontend - React.js, Material UI, React Hook Form \
 Backend - Commerce.js, Stripe.js
 ## [Live Site](https://happy-gates-408ffa.netlify.app)
 
