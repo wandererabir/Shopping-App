@@ -1,7 +1,7 @@
 # My Space - Shopping App
 Frontend - React.js, Material UI, React Hook Form \
 Backend - Commerce.js, Stripe.js
-## [Live Site](https://happy-gates-408ffa.netlify.app)
+## [Live Site](https://myspace-app.netlify.app)
 
 # Getting Started with Create React App
 
