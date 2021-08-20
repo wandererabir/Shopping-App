@@ -7,15 +7,28 @@ import { commerce } from './lib/commerce';
 
 const App = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
   const fetchProducts = async () => {
-    const { data } = await commerce.products.list();
+    const { data: products } = await commerce.products.list();
+    const { data: categoriesData} = await commerce.categories.list();
 
-    setProducts(data);
+    const productsPerCategory = categoriesData.reduce((acc, category) => {
+      return [
+        ...acc,
+        {
+          ...category,
+          productsData: products.filter((product) =>
+            product.categories.find((cat) => cat.id === category.id)
+          ),
+        }
+      ]
+    }, []);
+
+    setCategories(productsPerCategory);
   };
 
   const fetchCart = async () => {
@@ -78,7 +91,7 @@ const App = () => {
         <Navbar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle} />
         <Switch>
           <Route exact path="/">
-            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
+            <Products categories={categories} onAddToCart={handleAddToCart} handleUpdateCartQty />
           </Route>
           <Route exact path="/cart">
             <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />

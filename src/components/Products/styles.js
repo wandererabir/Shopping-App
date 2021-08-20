@@ -10,4 +10,12 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  container: {
+    
+  },
+  options: {
+    textAlign: "center",
+    marginBottom:'10px',
+    marginTop: '50px',
+  },
 }));
